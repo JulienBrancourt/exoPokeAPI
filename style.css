@@ -160,9 +160,16 @@ h2 {
     table-layout: fixed;
     text-align: center;
     margin: 30px auto;
+    border-collapse: collapse;
+
 }
 
 tr {
     height: 30px;
+}
+
+th {
+    padding: 15px;
+    border-collapse: collapse;
 }
 
