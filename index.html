@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo 32</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="./main.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="logo">
+
+            <img class="logo-img" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Logo Pokemon">
+        </div>
+    
+        <form class="recherche" action="">
+            <input type="text" id="search" placeholder="Saisir un nom de pokemon">
+            <button id="submit">Search</button>
+        </form>
+    
+        <section>
+            <button id="prev"><<</button>
+
+            <div class="card">
+              <div class="detail" id="nom"></div>
+              <div class="detail" id="poids"></div>
+              <div class="detail" id="taille"></div>
+              <div class="detail" id="type"></div> 
+              <div class="detail" id="capacite"></div>
+              <!-- <div class="detail" id="id"></div> -->
+              <div class="zone-image detail">
+                  <img id="image">
+              </div>
+          </div>
+
+          <button id="next">>></button>
+        </section>
+    
+    </main>
+    
+</body>
+</html>

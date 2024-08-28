@@ -1,0 +1,152 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    width: 90%;
+    margin: 0 auto;
+    background: linear-gradient(to bottom left, rgb(150, 0, 8), rgb(19, 0, 143), rgb(140, 91, 35)); 
+    color: #fff; 
+    height: 100vh;
+
+}
+
+.logo {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.recherche {
+    display: flex;
+    margin: 25px auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#search {
+    width: 600px;
+    height: 35px;
+    text-align: center;
+    background-color: #262525;
+    color: white;
+    border: 5px solid #c71616;
+}
+
+#submit {
+    height: 35px;
+    width: 65px;
+    background-color: #262525;
+    color: white;
+    border: 5px solid #c71616;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+
+.card {
+    background-color: #c71616;
+    border: 2px solid #c71616;
+    border-radius: 5px;
+    height: 500px;
+    width: 500px;
+    display: grid;
+    grid-template-areas: 
+    "zone-image zone-image zone-image nom nom nom"
+    "zone-image zone-image zone-image poids poids taille"
+    "zone-image zone-image zone-image type type type"
+    "capacite capacite capacite capacite capacite capacite"
+    "capacite capacite capacite capacite capacite capacite"
+    "capacite capacite capacite capacite capacite capacite";
+    gap: 10px; 
+    padding: 10px; 
+}
+
+.detail {
+    color: white;
+    padding: 5px; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: #262525;
+}
+
+#nom {
+ grid-area: nom;
+}
+
+#poids {
+ grid-area: poids;
+}
+
+#taille {
+ grid-area: taille;
+}
+
+#type {
+ grid-area: type;
+}
+.type {
+ background-color: #808080;
+ padding: 10px 25px;
+ margin: 1px;
+ border-radius: 15px;
+ font-weight: bold;
+}
+
+#capacite {
+ grid-area: capacite;
+ align-items: start;
+    justify-content:left; 
+
+}
+.capacite {
+ background-color: #808080;
+ padding: 30px 25px;
+ margin: 3px;
+ border-radius: 15px;
+ font-weight: bold;
+}
+
+#id {
+ grid-area: id;
+}
+
+#zone-image {
+ grid-area: zone-image;
+}
+
+
+.zone-image {
+    grid-area: zone-image;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+#image {
+    max-width: 130%;
+    height: auto;
+}
+
+#prev, #next {
+    background-color: #121233;
+    color: white;
+    height: 70px;
+    width: 70px;
+    border-radius: 55px;
+    border: 1px solid #121233;
+    padding: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
