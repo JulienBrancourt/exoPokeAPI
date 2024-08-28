@@ -4,6 +4,7 @@ const apiUrl = "https://pokeapi.co/api/v2/pokemon";
 
 let search = document.querySelector("#search");
 let submit = document.querySelector("#submit");
+let capture = document.querySelector("#capture")
 
 let nomP = document.querySelector("#nom");
 let poidsP = document.querySelector("#poids");
@@ -50,7 +51,7 @@ const assemblePokemon = (data) => {
 };
 
 const affichePokemon = (monPokemon) => {
-    console.log("on passe par l'affichage");
+    // console.log("on passe par l'affichage");
     
 	nomP.textContent = `${monPokemon.nom}`;
 	poidsP.textContent = `${monPokemon.poids} lbs`;
@@ -71,7 +72,8 @@ const affichePokemon = (monPokemon) => {
 
 window.addEventListener("load", () => {
 	search.value = currentId; 
-	getPokemonByName(currentId); 
+    getPokemonByName(currentId);
+    afficherPokemonsCaptures()
 });
 
 submit.addEventListener("click", (e) => {
@@ -99,5 +101,56 @@ next.addEventListener("click", (e) => {
         getPokemonByName(currentId);
     }
 });
+
+capture.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	let capturedPokemons =
+		JSON.parse(localStorage.getItem("capturedPokemons")) || [];
+
+	let currentPokemon = {
+		nom: nomP.textContent,
+		poids: poidsP.textContent,
+		taille: tailleP.textContent,
+		type: typeP.textContent,
+		capacite: capaciteP.textContent,
+		image: imageP.src,
+	};
+
+	capturedPokemons.push(currentPokemon);
+
+	localStorage.setItem("capturedPokemons", JSON.stringify(capturedPokemons));
+
+	afficherPokemonsCaptures();
+
+	alert(`${currentPokemon.nom} a été capturé!`);
+});
+
+const afficherPokemonsCaptures = () => {
+	let capturedPokemons =
+		JSON.parse(localStorage.getItem("capturedPokemons")) || [];
+
+	let tbody = document.querySelector("#pokemonCapture tbody");
+
+	tbody.innerHTML = "";
+
+	capturedPokemons.forEach((pokemon) => {
+		let row = document.createElement("tr");
+
+		row.innerHTML = `
+            <td>${pokemon.nom}</td>
+            <td>${pokemon.poids}</td>
+            <td>${pokemon.taille}</td>
+            <td>${pokemon.type}</td>
+            <td>${pokemon.capacite}</td>
+            <td><img src="${pokemon.image}" alt="Image de ${pokemon.nom}"></td>
+        `;
+		tbody.appendChild(row);
+	});
+};
+
+
+
+
 
 

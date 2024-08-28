@@ -9,8 +9,7 @@ body {
     margin: 0 auto;
     background: linear-gradient(to bottom left, rgb(150, 0, 8), rgb(19, 0, 143), rgb(140, 91, 35)); 
     color: #fff; 
-    height: 100vh;
-
+    height: auto;
 }
 
 .logo {
@@ -36,12 +35,13 @@ body {
     border: 5px solid #c71616;
 }
 
-#submit {
+#submit, #capture {
     height: 35px;
-    width: 65px;
+    width: 85px;
     background-color: #262525;
     color: white;
     border: 5px solid #c71616;
+    padding: 0 5px;
 }
 
 section {
@@ -149,4 +149,20 @@ section {
     cursor: pointer;
 }
 
+h2 {
+    text-align: center;
+    margin: 10px;
+}
+
+#pokemonCapture, th, td {
+    border: 1px solid white;
+    width: 90%;
+    table-layout: fixed;
+    text-align: center;
+    margin: 30px auto;
+}
+
+tr {
+    height: 30px;
+}
 
